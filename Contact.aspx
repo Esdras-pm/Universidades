@@ -6,13 +6,18 @@
     </h1>
     <div>
             Mostrar Universidades Ingresadas<br />
-            <asp:GridView ID="GridView1" runat="server" Width="398px">
+            <asp:GridView ID="GridView1" runat="server" Width="398px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                 <Columns>
                     <asp:CommandField ShowSelectButton="True" />
                 </Columns>
             </asp:GridView>
-            <asp:GridView ID="GridView2" runat="server" Width="398px">
+            <asp:GridView ID="GridView2" runat="server" Width="398px" OnSelectedIndexChanged="GridView2_SelectedIndexChanged">
+                <Columns>
+                    <asp:CommandField ShowSelectButton="True" />
+                </Columns>
             </asp:GridView>
-            <asp:Button ID="ButtonCargar" runat="server" CssClass="btn btn-success btn-lg" OnClick="ButtonCargar_Click" Text="Cargar Datos" />
+            <asp:Button ID="ButtonEliminar" runat="server" CssClass="btn btn-success btn-lg" OnClick="ButtonEliminar_Click" Text="Eliminar" />
+            <asp:TextBox ID="estmod_txt" runat="server"></asp:TextBox>
+        <asp:Button ID="ButtonModificar" runat="server" CssClass="btn btn-success btn-lg" OnClick="ButtonModificar_Click" Text="Modificar" />
         </div>
 </asp:Content>

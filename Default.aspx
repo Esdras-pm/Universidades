@@ -13,6 +13,9 @@
                 Ingrese Universidad:
                 <asp:TextBox ID="uni_txt" runat="server"></asp:TextBox>
             </p>
+            <p>
+                &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="uni_txt" ErrorMessage="Debe Ingresar una Universidad"></asp:RequiredFieldValidator>
+            </p>
             <h3>Estudiantes</h3>
             <p>
                 Ingrese algunos estudiantes:

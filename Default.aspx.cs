@@ -15,12 +15,12 @@ namespace Universidades
         static List<Estudiante> est = new List<Estudiante>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack)
+            if (!IsPostBack)
             {
                 string archivo = Server.MapPath("Universidades.json");
                 StreamReader jsonStream = File.OpenText(archivo);
-
                 string json = jsonStream.ReadToEnd(); jsonStream.Close();
+                if(json.Length>0)
                 unis = JsonConvert.DeserializeObject<List<Universidades>>(json);
 
             }
@@ -39,6 +39,9 @@ namespace Universidades
 
         protected void AlumnoButton_Click(object sender, EventArgs e)
         {
+            Universidades u = unis.Find(p => p.Universidad == uni_txt.Text);
+            if (u.Estudiantes.Count > 0)
+                est = u.Estudiantes;
             Estudiante estudiante = new Estudiante();
             estudiante.Nombre = estudiante_txt.Text;
 
@@ -48,15 +51,25 @@ namespace Universidades
 
         protected void UnisButton_Click(object sender, EventArgs e)
         {
-            Universidades universidad = new Universidades();
-            universidad.Universidad = uni_txt.Text;
-            universidad.Estudiantes = est.ToList();
+            Universidades u = unis.Find(p => p.Universidad == uni_txt.Text);
+            if(u.Universidad.Length==0)
+            {
+                Universidades universidad = new Universidades();
+                universidad.Universidad = uni_txt.Text;
+                universidad.Estudiantes = est.ToList();
 
-            unis.Add(universidad);
+                unis.Add(universidad);
 
-            GuardarJson();
+                GuardarJson();
 
-            est.Clear();
+                est.Clear();
+            }
+            else
+            {
+                u.Estudiantes = est;
+                GuardarJson();
+            }
+            uni_txt.Text = "";
         }
     }
 }

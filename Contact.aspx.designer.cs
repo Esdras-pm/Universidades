@@ -33,12 +33,30 @@ namespace Universidades
         protected global::System.Web.UI.WebControls.GridView GridView2;
 
         /// <summary>
-        /// Control ButtonCargar.
+        /// Control ButtonEliminar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonCargar;
+        protected global::System.Web.UI.WebControls.Button ButtonEliminar;
+
+        /// <summary>
+        /// Control estmod_txt.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox estmod_txt;
+
+        /// <summary>
+        /// Control ButtonModificar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonModificar;
     }
 }
